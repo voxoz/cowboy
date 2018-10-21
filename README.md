@@ -1,6 +1,8 @@
 Cowboy
 ======
 
+[![Build Status](https://travis-ci.org/voxoz/emqttc.svg?branch=master)](https://travis-ci.org/voxoz/emqttc)
+
 Cowboy is a small, fast and modular HTTP server written in Erlang.
 
 Goals
