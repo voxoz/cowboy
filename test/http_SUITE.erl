@@ -1073,7 +1073,7 @@ te_chunked_split_body(Config) ->
 			_ ->
 				[Size, ChunkBody, <<>>] =
 					binary:split(Chunk, [<<"\r\n">>], [global]),
-				PartASize = random:uniform(byte_size(ChunkBody)),
+				PartASize = rand:uniform(byte_size(ChunkBody)),
 				<<PartA:PartASize/binary, PartB/binary>> = ChunkBody,
 				ok = gun:dbg_send_raw(ConnPid, [Size, <<"\r\n">>, PartA]),
 				receive after 10 -> ok end,
@@ -1092,7 +1092,7 @@ te_chunked_split_crlf(Config) ->
 		[{<<"transfer-encoding">>, <<"chunked">>}]),
 	_ = [begin
 		%% Split in the newline just before the end of the chunk.
-		Len = byte_size(Chunk) - (random:uniform(2) - 1),
+		Len = byte_size(Chunk) - (rand:uniform(2) - 1),
 		<< Chunk2:Len/binary, End/binary >> = Chunk,
 		ok = gun:dbg_send_raw(ConnPid, Chunk2),
 		receive after 10 -> ok end,
