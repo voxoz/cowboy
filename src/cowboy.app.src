@@ -13,7 +13,7 @@
 %% OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 {application, cowboy, [
-	{description, "COWBOY Small, fast, modular HTTP server."},
+	{description, "COWBOY HTTP server"},
 	{vsn, "1.0.4"},
 	{id, "git"},
 	{modules, []},
